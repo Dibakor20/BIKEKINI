@@ -22,10 +22,12 @@ export const Logo = styled(Link)`
   color: orange;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif !important;
   span {
     font-weight: 300;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-family: "Open Sans", sans-serif !important;
   }
 `;
 
@@ -50,13 +52,14 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   color: #fff;
   transition: all 0.3s ease-in;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif !important;
   &:hover {
     color: #7b7fda;
   }
 `;
 
-export const Hamburger = styled.div`
+export const MobileIcon = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
