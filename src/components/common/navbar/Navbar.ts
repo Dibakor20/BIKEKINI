@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-interface StyledCardProps {
-  isOpen?: boolean;
-}
-
 export const Nav = styled.div`
   padding: 0 2rem;
   display: flex;
@@ -31,7 +27,7 @@ export const Logo = styled(Link)`
   }
 `;
 
-export const Menu = styled.div<StyledCardProps>`
+export const Menu = styled.div<{isOpen?:boolean}>`
   display: flex;
   justify-content: space-between;
   align-items: center;

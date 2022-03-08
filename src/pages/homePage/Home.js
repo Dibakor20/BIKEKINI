@@ -1,12 +1,14 @@
 import React from "react";
 import Navbar from "../../components/common/navbar/Navbar.tsx";
-import Banner from "../../components/banner/Banner";
+import Products from "../../components/products/Products.tsx";
+
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Banner />
+      <Products/>
+      
     </>
   );
 };
