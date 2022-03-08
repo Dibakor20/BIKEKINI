@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { IProduct } from '../../services/Type'
-import productService from '../../services/ProductService'
+import ProductService from '../../services/ProductService'
 
 const Products = () => {
     const [products, setProducts] = useState<IProduct[]>([] as IProduct[])
     useEffect(() => {
-        productService.getProduct()
-        .then(res=>console.log(res))
-    },[])
+        ProductService.getProduct()
+        .then((res)=>setProducts(res))
+    }, [])
 
     return (
         <div>
             {
-                products.map((pd) => <li>{ pd.title}</li>)
+                products?.map((pd) => <li>{ pd.title}</li>)
             }
         </div>
     );

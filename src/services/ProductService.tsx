@@ -1,21 +1,21 @@
-import request  from "../services/httpServices";
+import request from "../services/httpServices";
+import { IProduct } from "./Type";
 
-class productService{
-    getProduct():Promise<any> {
-      return  request.get('/products')
-    }
+class ProductService {
+  getProduct(): Promise<IProduct[]> {
+    return request.get("/products");
+  }
+  getProductById(id: string): Promise<any> {
+    return request.get(`/products/${id}`);
+  }
 
-    getProductById(id:string):Promise<any> {
-        return  request.get(`/products/${id}`)
-    }
-    
-    addProduct(body:{}):Promise<any> {
-        return  request.post('/products/',body)
-      }
-      
-      deleteProduct(id:string):Promise<any> {
-        return  request.delete(`/products/${id}`)
-    }
+  addProduct(body: {}): Promise<any> {
+    return request.post("/products/", body);
+  }
+
+  deleteProduct(id: string): Promise<any> {
+    return request.delete(`/products/${id}`);
+  }
 }
 
-export default new productService;
+export default new ProductService();
