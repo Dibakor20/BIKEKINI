@@ -3,6 +3,9 @@ import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+body{
+  overflow-x:hidden !important ;
+}
 *{
     box-sizing:border-box ;
     margin:0 !important ;

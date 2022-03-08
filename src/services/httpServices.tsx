@@ -4,7 +4,7 @@ const baseUrl = process.env.REACT_APP_API_BASE_URL;
 // intance create for extend different components
 const instance = axios.create({
   baseURL: 'https://fakestoreapi.com',
-  timeout: 1500,
+  timeout: 15000,
 });
 
 // Call back function
