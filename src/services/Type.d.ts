@@ -1,4 +1,5 @@
 export interface IProduct{
+    slice(arg0: number, arg1: number);
     id: number;
     title: string;
     price: number;
