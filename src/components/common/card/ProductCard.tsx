@@ -21,7 +21,7 @@ interface IProps {
 }
 
 const ProductCard = ({ pd }:IProps)  => {
-  const {title,price} = pd
+  const {title,price,id} = pd
   return (
     <ProductCards>
       <CardHeader>
@@ -42,7 +42,7 @@ const ProductCard = ({ pd }:IProps)  => {
           <FaStar />
           <FaStar />
         </ProductReview>
-        <ProductTitle to="/">{ title}</ProductTitle>
+        <ProductTitle to={`/product/${id}`}>{ title}</ProductTitle>
         <ProductPrice>
           <DiscountPrice>30 </DiscountPrice>
           {price}
