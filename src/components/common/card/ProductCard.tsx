@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCartPlus, FaStar } from "react-icons/fa";
+import { IProduct } from "../../../services/Type";
 import {
   ProductCards,
   CardHeader,
@@ -13,9 +14,14 @@ import {
   ProductTitle,
   ProductPrice,
   DiscountPrice,
-} from "./ProductCard";
+} from "./ProductCard.styles";
 
-const ProductCard = () => {
+interface IProps {
+  pd: IProduct;
+}
+
+const ProductCard = ({ pd }:IProps)  => {
+  const {title,price} = pd
   return (
     <ProductCards>
       <CardHeader>
@@ -36,10 +42,10 @@ const ProductCard = () => {
           <FaStar />
           <FaStar />
         </ProductReview>
-        <ProductTitle to="/">Computer</ProductTitle>
+        <ProductTitle to="/">{ title}</ProductTitle>
         <ProductPrice>
-          <DiscountPrice>30</DiscountPrice>
-          300
+          <DiscountPrice>30 </DiscountPrice>
+          {price}
         </ProductPrice>
       </CardBody>
     </ProductCards>

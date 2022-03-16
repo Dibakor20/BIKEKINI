@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.div`
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@ export const Logo = styled(Link)`
 
 export const Menu = styled.div<{isOpen?:boolean}>`
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   position: relative;
   @media (max-width: 768px) {

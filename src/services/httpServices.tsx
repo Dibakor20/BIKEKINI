@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
 // intance create for extend different components
 const instance = axios.create({

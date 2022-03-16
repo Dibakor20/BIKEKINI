@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Nav, Logo, Menu, MenuLink, MobileIcon } from "./Navbar";
+import { Nav, Logo, Menu, MenuLink, MobileIcon } from "./Navbar.styles";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
         <MenuLink to="/">Popular Bikes</MenuLink>
         <MenuLink to="/">Blog</MenuLink>
         <MenuLink to="/">Delivery</MenuLink>
-      </Menu>
+        </Menu>
     </Nav>
   );
 };

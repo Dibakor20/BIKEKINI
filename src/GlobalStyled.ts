@@ -8,13 +8,13 @@ body{
 }
 *{
     box-sizing:border-box ;
-    margin:0 !important ;
-    padding:0 !important;
+    margin:0 ;
+    padding:0 
     font-family: 'Open Sans', sans-serif !important;
 }
 `;
 export const Container = styled.div`
-  max-width: 1300px;
+  max-width: 2600px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

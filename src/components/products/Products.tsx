@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IProduct } from "../../services/Type";
 import ProductService from "../../services/ProductService";
-import ProductCard from "../../components/common/card/ProductCard.tsx";
-import { ProductSection, ProductHeading, ProductRow } from "./Products";
+import  ProductCard  from "../../components/common/card/ProductCard";
+import { ProductSection, ProductHeading, ProductRow } from "./Products.styles";
 import UseAsync from "../../hook/UseAsync";
+import { Container } from "GlobalStyled";
 
-interface IProps {
-  products: IProduct[] | null;
-  isLoading: boolean;
-}
-const Products = () => {
+const Products = (): React.ReactElement <any> => {
   const { data, isLoading } = UseAsync(ProductService.getProduct);
-
+ 
   return (
     <ProductSection>
+      <Container>
       <ProductHeading>Latest Bike</ProductHeading>
       <ProductRow>
         {isLoading && <>Loading...</>}
@@ -23,7 +21,8 @@ const Products = () => {
             .map((pd: IProduct) => (
               <ProductCard key={pd.id} pd={pd}></ProductCard>
             ))}
-      </ProductRow>
+        </ProductRow>
+        </Container>
     </ProductSection>
   );
 };

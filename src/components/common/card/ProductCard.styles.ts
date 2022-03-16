@@ -70,5 +70,5 @@ export const DiscountPrice = styled.span`
   text-decoration: line-through;
   color: gray;
   font-weight: 300;
-  padding: 3px;
+  padding: 3px 5px;
 `;
