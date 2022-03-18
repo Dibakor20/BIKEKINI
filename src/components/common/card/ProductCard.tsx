@@ -6,7 +6,6 @@ import {
   CardHeader,
   Image,
   CardSubHeader,
-  AddToCardButton,
   SubHeading,
   CardIcon,
   CardBody,
@@ -14,6 +13,7 @@ import {
   ProductTitle,
   ProductPrice,
   DiscountPrice,
+  AddToCardIcon,
 } from "./ProductCard.styles";
 
 interface IProps {
@@ -27,12 +27,12 @@ const ProductCard = ({ pd }:IProps)  => {
       <CardHeader>
         <Image src="https://bd.gaadicdn.com/processedimages/tvs/tvs-jupiter/494X300/tvs-jupiter5e98386b0a37b.jpg?imwidth=400&impolicy=resize"></Image>
         <CardSubHeader>
-          <AddToCardButton>
+          <AddToCardIcon>
             <CardIcon>
               {" "}
               <FaCartPlus />
             </CardIcon>
-          </AddToCardButton>
+          </AddToCardIcon>
           <SubHeading>On Sale!</SubHeading>
         </CardSubHeader>
       </CardHeader>

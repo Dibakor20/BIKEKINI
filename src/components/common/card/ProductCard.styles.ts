@@ -25,7 +25,7 @@ export const CardSubHeader = styled.div`
   width: 100%;
   padding: 0 10px;
 `;
-export const AddToCardButton = styled.button`
+export const AddToCardIcon = styled.button`
   border: none;
   margin: 0 5px;
   background-color: #222;
