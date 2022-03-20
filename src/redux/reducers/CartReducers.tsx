@@ -1,7 +1,7 @@
 import { Action } from "history";
+import { cartAction } from "redux/action/CartActions";
 import { ActionType } from "redux/ActionType";
 import { IProduct } from "services/Type";
-import { cartAction } from "redux/action/CartAction";
 
 const cartReducers = (state: IProduct[] = [], action: cartAction) => {
   switch (action.type) {

@@ -38,7 +38,7 @@ import {
   SocialUlIcon,
 } from "./SingleProduct.styled";
 import { useDispatch } from "react-redux";
-import { addToCart } from "redux/action/CartAction";
+import { addToCart } from "redux/actionCreator/CartActionCreator";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -53,7 +53,7 @@ const SingleProduct = () => {
   return (
     <>
       <Navbar />
-      {isLoading && <h3>Loading...</h3>}
+      {isLoading && <>Loading...</>}
       {isSuccess && (
         <>
           <SingleProductSection>
@@ -129,7 +129,7 @@ const SingleProduct = () => {
           </SingleProductSection>
         </>
       )}
-      {isError && <h3>{error}</h3>}
+      {isError && <>{error}</>}
     </>
   );
 };
