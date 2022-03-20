@@ -1,4 +1,5 @@
 export interface IProduct{
+    length: ReactNode;
     slice(arg0: number, arg1: number);
     id: number;
     title: string;

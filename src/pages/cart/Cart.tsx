@@ -11,26 +11,29 @@ import {
   CartItem,
   CartPrice,
   CartProduct,
+  CartQuantity,
   CartSection,
   CartTitle,
   CartTotal,
   CartTotalItem,
+  CheckoutButton,
+  DeliveryFee,
   SubTitle,
   SubTotal,
 } from "./Cart.styled";
 
 const Cart = () => {
-    const cart: IProduct[] = useSelector((state: AppState) => state.cart);
-    
-    // const subTotal = cart.reduce((_prev, _curr) => {
-        
-    // },0)
+  const cart: IProduct[] = useSelector((state: AppState) => state.cart);
+    const subTotal = cart?.reduce((acc, crr) => acc + crr.price, 0);
+    const deliveryFee = 50 
+    const total = subTotal + deliveryFee
 
   return (
     <>
       <Navbar />
       <Container>
         <CartSection>
+          {/* cart item */}
           <CartItem>
             {cart.map((item) => (
               <>
@@ -43,15 +46,24 @@ const Cart = () => {
                 </CartProduct>
               </>
             ))}
-
-            <CartTotal>
-                          <CartTotalItem>Cart Total</CartTotalItem>
-                          <SubTotal>
-                              <SubTitle>SUBTITLE</SubTitle>
-                              <CartPrice>$300</CartPrice>
-                          </SubTotal>
-            </CartTotal>
           </CartItem>
+          {/* cart total */}
+          <CartTotal>
+            <CartTotalItem>Cart Total</CartTotalItem>
+            <SubTotal>
+              <SubTitle>SUBTOTAL</SubTitle>
+              <CartPrice>${subTotal}</CartPrice>
+                      </SubTotal>
+                      <SubTotal>
+              <SubTitle>Delivery Fee</SubTitle>
+              <CartPrice>${deliveryFee}</CartPrice>
+                      </SubTotal>
+                      <SubTotal>
+              <SubTitle>TOTAL</SubTitle>
+              <CartPrice>${total}</CartPrice>
+            </SubTotal>
+             <CheckoutButton>Procced To Checkout</CheckoutButton>
+          </CartTotal>
         </CartSection>
       </Container>
     </>
