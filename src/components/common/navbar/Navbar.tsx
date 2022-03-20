@@ -27,7 +27,7 @@ const Navbar = () => {
         <MenuLink to="/">Popular Bikes</MenuLink>
         <MenuLink to="/">Blog</MenuLink>
         <MenuLink to="/">Delivery</MenuLink>
-        <MenuLink to="/"><FaCartPlus />{ cart?.length}</MenuLink>
+        <MenuLink to="/cart"><FaCartPlus />{ cart?.length}</MenuLink>
         </Menu>
     </Nav>
   );
