@@ -5,8 +5,14 @@ import UseAsync from "hook/UseAsync";
 import ProductService from "services/ProductService";
 import { IProduct } from "services/Type";
 import { Container } from "GlobalStyled";
-import { FaStar,FaFacebookF,FaInstagram,FaTwitter,FaGooglePlusG } from "react-icons/fa";
-import { AiOutlinePlus, AiOutlineMinus} from "react-icons/ai";
+import {
+  FaStar,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaGooglePlusG,
+} from "react-icons/fa";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import {
   AddToCartButton,
   AddToCartSection,
@@ -31,12 +37,16 @@ import {
   SocialShare,
   SocialUlIcon,
 } from "./SingleProduct.styled";
+import { useDispatch } from "react-redux";
+import { addToCart } from "redux/action/CartAction";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const getProduct = useCallback(() => {
     return ProductService.getProductById(id as string);
   }, [id]);
+
+  const dispatch = useDispatch();
 
   const { data, isLoading, isSuccess, isError, error } = UseAsync(getProduct);
   const { title, description, price } = data || {};
@@ -77,7 +87,11 @@ const SingleProduct = () => {
                         <AiOutlineMinus />
                       </DecreaseButton>
                     </PdCounter>
-                    <AddToCartButton>Add To Cart</AddToCartButton>
+                    <AddToCartButton
+                      onClick={() =>dispatch(addToCart(data as IProduct))}
+                    >
+                      Add To Cart
+                    </AddToCartButton>
                   </AddToCartSection>
 
                   {/* Social share Icon */}
@@ -85,23 +99,30 @@ const SingleProduct = () => {
                   <SocialShare>
                     <SocialUlIcon>
                       <SocialLiIcon>
-                        <SocialLink><FaFacebookF /></SocialLink>
+                        <SocialLink>
+                          <FaFacebookF />
+                        </SocialLink>
                       </SocialLiIcon>
 
                       <SocialLiIcon>
-                        <SocialLink><FaInstagram /></SocialLink>
+                        <SocialLink>
+                          <FaInstagram />
+                        </SocialLink>
                       </SocialLiIcon>
 
                       <SocialLiIcon>
-                        <SocialLink><FaTwitter /></SocialLink>
+                        <SocialLink>
+                          <FaTwitter />
+                        </SocialLink>
                       </SocialLiIcon>
 
                       <SocialLiIcon>
-                        <SocialLink><FaGooglePlusG /></SocialLink>
+                        <SocialLink>
+                          <FaGooglePlusG />
+                        </SocialLink>
                       </SocialLiIcon>
                     </SocialUlIcon>
                   </SocialShare>
-
                 </ProductContent>
               </Product>
             </Container>

@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { AppState } from "redux/store";
 import { Nav, Logo, Menu, MenuLink, MobileIcon } from "./Navbar.styles";
+import { FaCartPlus} from "react-icons/fa";
+import { IProduct } from "services/Type";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const cart: IProduct[] = useSelector((state: AppState) => state.cart)
+
 
   return (
     <Nav>
@@ -20,9 +27,12 @@ const Navbar = () => {
         <MenuLink to="/">Popular Bikes</MenuLink>
         <MenuLink to="/">Blog</MenuLink>
         <MenuLink to="/">Delivery</MenuLink>
+        <MenuLink to="/"><FaCartPlus />{ cart?.length}</MenuLink>
         </Menu>
     </Nav>
   );
 };
 
 export default Navbar;
+
+
