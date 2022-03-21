@@ -88,7 +88,7 @@ const SingleProduct = () => {
                       </DecreaseButton>
                     </PdCounter>
                     <AddToCartButton
-                      onClick={() =>dispatch(addToCart(data as IProduct))}
+                      onClick={() => dispatch(addToCart(data as IProduct))}
                     >
                       Add To Cart
                     </AddToCartButton>
