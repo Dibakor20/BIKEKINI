@@ -50,6 +50,11 @@ const SingleProduct = () => {
 
   const { data, isLoading, isSuccess, isError, error } = UseAsync(getProduct);
   const { title, description, price } = data || {};
+
+  const addItem = (data: IProduct) => {
+    dispatch(addToCart(data));
+  };
+
   return (
     <>
       <Navbar />
@@ -87,9 +92,7 @@ const SingleProduct = () => {
                         <AiOutlineMinus />
                       </DecreaseButton>
                     </PdCounter>
-                    <AddToCartButton
-                      onClick={() => dispatch(addToCart(data as IProduct))}
-                    >
+                    <AddToCartButton onClick={() => addItem(data as IProduct)}>
                       Add To Cart
                     </AddToCartButton>
                   </AddToCartSection>
