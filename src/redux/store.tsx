@@ -1,12 +1,10 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import cartReducers from "./reducers/CartReducers";
-import authReducers from "./reducers/AuthReducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from 'redux-thunk';
 import { IProduct } from "services/Type";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-
 
 const persistConfig = {
   key: 'root',
@@ -15,7 +13,6 @@ const persistConfig = {
 
 const rootReducers = combineReducers({
   cart: cartReducers,
-  auth: authReducers
 });
 const persistedReducer = persistReducer(persistConfig, rootReducers)
 const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(ReduxThunk)));
@@ -23,7 +20,5 @@ const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(
 export const persistor = persistStore(store)
 
 export type AppState = ReturnType<typeof rootReducers>
-
-
 
 export default store;

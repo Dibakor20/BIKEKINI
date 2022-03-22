@@ -1,7 +1,6 @@
 import { ActionType } from "redux/ActionType";
 import { IProduct } from "services/Type";
 
-
 interface addToCartAction {
     type: ActionType.ADD_TO_CART;
     payload: IProduct

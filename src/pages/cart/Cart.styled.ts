@@ -41,6 +41,9 @@ export const CartPrice = styled.h5`
     display: flex;
     align-items: center;
 `
+export const DeleteButton = styled.button`
+    cursor: pointer;
+`
 export const CartTotalItem = styled.div`
   
 `

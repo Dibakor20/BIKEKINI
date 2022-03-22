@@ -13,7 +13,7 @@ class ProductService {
     return request.post("/products/", body);
   }
 
-  deleteProduct(id: string): Promise<any> {
+  deleteProduct(id:number): Promise<any> {
     return request.delete(`/products/${id}`);
   }
 }
