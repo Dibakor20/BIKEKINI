@@ -38,7 +38,7 @@ import {
   SocialUlIcon,
 } from "./SingleProduct.styled";
 import { useDispatch } from "react-redux";
-import { addToCart } from "redux/actionCreator/CartActionCreator";
+import { addToCart, increment } from "redux/actionCreator/CartActionCreator";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -49,11 +49,16 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
 
   const { data, isLoading, isSuccess, isError, error } = UseAsync(getProduct);
-  const { title, description, price } = data || {};
 
+  const { title, description, price,length} = data || {};
+  
   const addItem = (data: IProduct) => {
-    dispatch(addToCart(data));
+    dispatch(addToCart({...data, quantity:1}));
   };
+
+  const handleIncrement = (id:number) => {
+    dispatch(increment(id as number))
+  }
 
   return (
     <>
@@ -87,7 +92,7 @@ const SingleProduct = () => {
                       <IncreaseButton>
                         <AiOutlinePlus />
                       </IncreaseButton>
-                      <ItemNumber>5</ItemNumber>
+                      <ItemNumber>{}</ItemNumber>
                       <DecreaseButton>
                         <AiOutlineMinus />
                       </DecreaseButton>

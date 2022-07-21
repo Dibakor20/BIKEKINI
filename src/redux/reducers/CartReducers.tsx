@@ -16,6 +16,11 @@ const cartReducers = (state: IProduct[] = [], action: cartAction) => {
       return [];
     }
 
+    case ActionType.INCREMENT: {
+      const newState = state.map((item) => item.id === action.payload)
+      return newState.length + 1
+    }
+      
     default:
       return state;
   }

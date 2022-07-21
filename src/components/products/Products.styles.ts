@@ -13,4 +13,10 @@ export const ProductRow = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 15px;
+  @media screen and (max-width:700px) {
+  grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width:450px) {
+  grid-template-columns: repeat(1, 1fr);
+  }
 `;

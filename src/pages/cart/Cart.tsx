@@ -3,7 +3,7 @@ import { Container } from "GlobalStyled";
 import UseAsync from "hook/UseAsync";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "redux/actionCreator/CartActionCreator";
+import { increment, removeFromCart } from "redux/actionCreator/CartActionCreator";
 import { AppState } from "redux/store";
 import ProductService from "services/ProductService";
 import { IProduct } from "services/Type";
@@ -35,6 +35,7 @@ const Cart = () => {
     dispatch(removeFromCart(id as number));
   };
 
+ 
   return (
     <>
       <Navbar />

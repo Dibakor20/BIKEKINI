@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
 body{
   overflow-x:hidden !important ;
+  background-color: #fafafa !important;
 }
 *{
     box-sizing:border-box ;
@@ -14,7 +15,7 @@ body{
 }
 `
 export const Container = styled.div`
-  max-width: 2600px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

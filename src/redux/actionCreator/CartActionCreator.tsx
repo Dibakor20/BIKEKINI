@@ -21,3 +21,17 @@ export const clearCart = ():cartAction => {
       type: ActionType.CLEAR_CART,
   };
 };
+
+export const increment = (payload:number):cartAction => {
+  return {
+    type: ActionType.INCREMENT,
+    payload,
+  }
+}
+
+export const decrement = (payload:number):cartAction => {
+  return {
+    type: ActionType.Decrement,
+    payload,
+  }
+}

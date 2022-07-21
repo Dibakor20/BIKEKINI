@@ -8,6 +8,8 @@ export interface IProduct{
     category: string;
     image: string;
     rating: object;
+    quantity?: number;
+   
 }
 
 export interface IAuthData {
